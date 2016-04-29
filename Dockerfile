@@ -1,4 +1,4 @@
-FROM solr
+FROM solr:5.5
 
 ADD conf/mysql-connector-java-5.1.38-bin.jar /opt/solr/dist
 
