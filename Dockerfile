@@ -1,6 +1,6 @@
 FROM solr:5.4.0
 
-ADD conf/mysql-connector-java-5.1.38-bin.jar /opt/solr/dist
+ADD conf/mysql-connector-java-5.1.38-bin.jar /opt/solr/dist/
 
 # Start Solr service and add default 'dina' core.
 RUN /opt/solr/bin/solr start && /opt/solr/bin/solr create_core -c dina
