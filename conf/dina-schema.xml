@@ -121,25 +121,25 @@
     <field name="_version_" type="long" indexed="true" stored="true"/>
     <field name="_root_" type="string" indexed="true" stored="false"/>
     <field name="_text_" type="text_general" indexed="true" stored="false" multiValued="true"/>
-    
+
     <!-- Collecting Events -->
     <field name="ce_lc_latitude" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="ce_lc_longitude" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="ce_lc_name" type="string" indexed="true" stored="true" multiValued="false"/>
-    
+
     <field name="ce_lc_geo_fullName" type="string" indexed="true" stored="true" multiValued="false" />
-    
+
     <field name="ce_startDate" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="ce_endDate" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="ce_givenName" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="ce_method" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="ce_collectors" type="string" indexed="true" stored="true" multiValued="true" />
-    
+
     <!-- Geography -->
     <field name="geo_fullName" type="string" indexed="true" stored="true" multiValued="false"/>
     <field name="geo_geographyCode" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="geo_rank" type="string" indexed="true" stored="true" multiValued="false" />
-    
+
     <!-- Locality -->
     <field name="lc_name" type="string" indexed="true" stored="true" multiValued="false" />
     <field name="lc_latitude" type="string" indexed="true" stored="true" multiValued="false" />
@@ -148,20 +148,24 @@
 
     <!-- Lithostratigraphy -->
     <field name="li_name" type="string" indexed="true" stored="true" multiValued="false" />
-    
+
     <!-- Chronostraigraphy -->
     <field name="ch_name" type="string" indexed="true" stored="true" multiValued="false" />
+
+    <!-- Agent -->
+    <field name="agent_firstName" type="string" indexed="true" stored="false" multiValued="false" />
+    <field name="agent_lastName" type="string" indexed="true" stored="false" multiValued="false" />
 
     <!-- entity_type must exist on all for quicker search -->
     <field name="primary_id" type="string" indexed="false" stored="true" multiValued="false" />
     <field name="entity_type" type="string" indexed="true" stored="true" required="true" multiValued="false"/>
-    
+
     <!-- Other common fields -->
     <field name="disciplineID" type="string" indexed="true" multiValued="true" />
-    
+
     <copyField source="*" dest="_text_"/>
 
-<!--    
+<!--
     <fieldType name="text_general_edge_ngram" class="solr.TextField" positionIncrementGap="100">
         <analyzer type="index">
             <tokenizer class="solr.WhitespaceTokenizerFactory"/>
