@@ -219,5 +219,19 @@
                 <field column="DisciplineID" name="disciplineID" />
             </entity>
         </entity>
+
+        <!-- Agent -->
+        <entity name="agent"
+            query="SELECT *, 'agent' as t, CONCAT('agent_', AgentID) as id
+            FROM agent"
+        >
+            <field column="t" name="entity_type" />
+            <field column="id" name="id" />
+
+            <field column="AgentID" name="primary_id" />
+            <field column="FirstName" name="agent_firstName" />
+            <field column="LastName" name="agent_lastName" />
+        </entity>
+
     </document>
 </dataConfig>
