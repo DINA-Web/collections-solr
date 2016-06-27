@@ -47,3 +47,9 @@ The configartion sets the default join operator to `AND` in the `solrQueryParser
 ### Building ###
 
 The Solr index is build into a Docker image and pushed to [Dockerhub](https://hub.docker.com/r/dina/collections-solr) using [Travis-CI](https://travis-ci.org/DINA-Web/collections-solr). The configuration for the image is found in the [Dockerfile](Dockerfile) and the Travis configuration is located in [.travis.yml](.travis.yml).
+
+### Deployment ###
+
+Once deplyed you'll need to update the index to reflect the new changes to the schema. This can be done manually by navigating to `server-url.com/solr`, selecting the `dina` core and trigger a full import on the `dataimport` page.
+
+**Note:** An import needs to be done as soon as the container been destroyed or updated since the data is stored inside the container.
